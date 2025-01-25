@@ -1,0 +1,16 @@
+{
+  "name": "mono-repo-docker-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start --prefix apps/client\" \"npm run start --prefix apps/server\"",
+    "build": "npm run build --prefix apps/client && npm run build --prefix apps/server",
+    "test": "npm run test --prefix apps/client && npm run test --prefix apps/server"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  }
+}
