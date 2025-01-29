@@ -6,9 +6,9 @@
     "apps/*"
   ],
   "scripts": {
-    "start": "concurrently \"npm run start --prefix apps/client\" \"npm run start --prefix apps/server\"",
-    "build": "npm run build --prefix apps/client && npm run build --prefix apps/server",
-    "test": "npm run test --prefix apps/client && npm run test --prefix apps/server"
+    "start": "concurrently \"npm run start --prefix apps/example-app/client\" \"npm run start --prefix apps/example-app/server\"",
+    "build": "npm run build --prefix apps/example-app/client && npm run build --prefix apps/example-app/server",
+    "test": "npm run test --prefix apps/example-app/client && npm run test --prefix apps/example-app/server"
   },
   "devDependencies": {
     "concurrently": "^6.0.0"
