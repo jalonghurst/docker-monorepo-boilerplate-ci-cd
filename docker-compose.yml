@@ -1,14 +1,12 @@
-version: "3.8"
-
 services:
   client:
     build:
       context: ./apps/example-app/client
       dockerfile: Dockerfile.client
     ports:
-      - "3000:3000"
+      - "2000:2000"
     volumes:
-      - ./apps/example-app/client:/app
+      - /c/Users/New/Desktop/docker-monorepo-boilerplate/apps/example-app/client
     environment:
       - NODE_ENV=development
 
@@ -17,12 +15,12 @@ services:
       context: ./apps/example-app/server
       dockerfile: Dockerfile.server
     ports:
-      - "5000:5000"
+      - "9000:9000"
     volumes:
-      - ./apps/example-app/server:/app
+      - /c/Users/New/Desktop/Docker-monorepo-boilerplate/apps/example-app/server
     environment:
       - NODE_ENV=development
-      - PORT=5000
+      - PORT=9000
 
 networks:
   default:
