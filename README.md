@@ -7,7 +7,7 @@ This repository serves as a starting point for setting up a monorepo with Docker
 ```
  mono-repo-app
 ├── apps
-|   |--app
+|   |--example-app
 │      ├── client          # Vite React-ts application
 │      └── server          # Node.js application
 ├── docker              # Docker configuration files
