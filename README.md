@@ -7,10 +7,12 @@ This repository serves as a starting point for setting up a monorepo with Docker
 ```
  mono-repo-app
 ├── apps
-|   |--example-app
-│      ├── client          # Vite React-ts application
-│      └── server          # Node.js application
-├── docker              # Docker configuration files
+|   ├── example-app
+│       ├── client          # Vite React-ts application
+|          └── Dockerfile.client
+│       └── server          # Node.js application
+|          └── Dockerfile.server
+├── docker-compose.yml  # Docker configuration file specifing what images are required, and which ports to expose.
 ├── package.json        # Root configuration file for the monorepo
 └── tsconfig.json       # Root TypeScript configuration file
 ```
