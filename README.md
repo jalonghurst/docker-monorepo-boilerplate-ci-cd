@@ -2,6 +2,10 @@
 
 This repository serves as a starting point for setting up a monorepo with Docker.
 
+The Docker files act as blueprints for building Docker images, in this case, we create both client and server images.
+
+These images serve as templates for running containers, and the containerized environment helps resolve local dependency issues by replicating our development environment. Once the environment is defined in the Dockerfile, it is used to build the environment, which is then saved as an immutable snapshot (the image).
+
 ## Project Structure
 
 ```
