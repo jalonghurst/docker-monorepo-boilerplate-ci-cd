@@ -24,6 +24,5 @@ These images serve as templates for running containers, and the containerized en
 
 What is left to do currently:
 
-- Fix: The client-server application is running in Docker, but the data isn't being sent or received properly, even though the Docker container is running the image.
 - Run different environments such as staging and production.
 - Install tailwind and add configuration.
