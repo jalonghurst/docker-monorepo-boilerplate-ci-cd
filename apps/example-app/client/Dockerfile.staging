@@ -3,11 +3,13 @@ FROM node:18
 WORKDIR /example-app/client
 
 COPY package.json package-lock.json ./
-# exclude dev dependencies when building for staging
-RUN npm install --only=production
+
+RUN npm install
 
 COPY . .
 
 EXPOSE 2000
+
+ENV NODE_ENV=staging
 
 CMD ["npm", "run", "start:staging"]
