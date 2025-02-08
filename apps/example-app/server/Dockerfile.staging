@@ -10,4 +10,6 @@ COPY . .
 
 EXPOSE 2000
 
+ENV NODE_ENV=staging
+
 CMD ["npm", "run", "start:staging"]
