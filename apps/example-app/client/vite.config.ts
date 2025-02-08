@@ -12,5 +12,6 @@ export default defineConfig({
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       allowedHeaders: ['Content-Type', 'Authorization'],
     },
+    allowedHosts: ['docker-monorepo-boilerplate-ci-cd-client-vi5z.onrender.com', 'https://docker-monorepo-boilerplate-ci-cd-client.onrender.com' ],
   },
 })
