@@ -1,15 +1,15 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "start:dev": "NODE_ENV=development ts-node src/index.ts",
-    "start:staging": "NODE_ENV=staging ts-node src/index.ts",
-    "start:prod": "NODE_ENV=production ts-node src/index.ts",
+    "start": "ts-node src/index.js",
+    "start:dev": "NODE_ENV=development node src/index.js",
+    "start:staging": "NODE_ENV=staging node src/index.js",
+    "start:prod": "NODE_ENV=production node src/index.js",
     "build": "tsc",
-    "dev": "ts-node-dev src/index.ts"
+    "dev": "ts-node-dev src/index/js"
   },
   "dependencies": {
     "express": "^4.17.1",
