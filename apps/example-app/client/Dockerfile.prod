@@ -3,8 +3,8 @@ FROM node:18
 WORKDIR /example-app/client
 
 COPY package.json package-lock.json ./
-# exclude dev dependencies when building for production
-RUN npm install --only=production
+
+RUN npm install
 
 COPY . .
 
