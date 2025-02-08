@@ -1,0 +1,39 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build Docker images
+        run: |
+          docker-compose -f docker-compose.yml -f docker-compose.${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/staging' && 'staging' }}.yml build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to Render (Client)
+        run: |
+          curl -X POST -H "Accept: application/json" -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+          -d '{"serviceId": "${{ github.ref == 'refs/heads/main' && 'srv-cujk6id6l47c73c3f7f0' || github.ref == 'refs/heads/staging' && 'srv-cujk53t2ng1s73b82org' }}", "branch": "${{ github.ref }}"}' \
+          https://api.render.com/v1/services/${{ github.ref == 'refs/heads/main' && 'srv-cujk6id6l47c73c3f7f0' || github.ref == 'refs/heads/staging' && 'srv-cujk53t2ng1s73b82org' }}/deploys
+
+      - name: Deploy to Render (Server)
+        run: |
+          curl -X POST -H "Accept: application/json" -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+          -d '{"serviceId": "${{ github.ref == 'refs/heads/main' && 'srv-cujk7qd6l47c73c3fmjg' || github.ref == 'refs/heads/staging' && 'srv-cujk75t2ng1s73b83si0' }}", "branch": "${{ github.ref }}"}' \
+          https://api.render.com/v1/services/${{ github.ref == 'refs/heads/main' && 'srv-cujk7qd6l47c73c3fmjg' || github.ref == 'refs/heads/staging' && 'srv-cujk75t2ng1s73b83si0' }}/deploys
