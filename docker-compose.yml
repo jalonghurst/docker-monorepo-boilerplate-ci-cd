@@ -2,7 +2,7 @@ services:
   client:
     build:
       context: ./apps/example-app/client
-      dockerfile: Dockerfile.client
+      dockerfile: Dockerfile
     ports:
       - "2000:2000"
     volumes:
@@ -14,7 +14,7 @@ services:
   server:
     build:
       context: ./apps/example-app/server
-      dockerfile: Dockerfile.server
+      dockerfile: Dockerfile
     ports:
       - "9000:9000"
     volumes:

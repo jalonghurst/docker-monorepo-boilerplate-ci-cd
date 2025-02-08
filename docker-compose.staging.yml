@@ -1,0 +1,12 @@
+services:
+  client:
+    build:
+      dockerfile: Dockerfile.staging
+    environment:
+      - NODE_ENV=staging
+
+  server:
+    build:
+      dockerfile: Dockerfile.staging
+    environment:
+      - NODE_ENV=staging

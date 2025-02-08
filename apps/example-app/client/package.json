@@ -5,6 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "vite",
+    "start:dev": "NODE_ENV=development vite",
+    "start:staging": "NODE_ENV=staging vite",
+    "start:prod": "NODE_ENV=production vite",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

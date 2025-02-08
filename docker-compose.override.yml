@@ -1,0 +1,13 @@
+services:
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+    environment:
+      - NODE_ENV=development
+
+
+server:
+    build:
+      dockerfile: Dockerfile.dev
+    environment:
+      - NODE_ENV=development

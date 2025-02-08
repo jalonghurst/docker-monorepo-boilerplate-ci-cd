@@ -1,0 +1,12 @@
+services:
+  client:
+    build:
+      dockerfile: Dockerfile.prod
+    environment:
+      - NODE_ENV=production
+
+  server:
+    build:
+      dockerfile: Dockerfile.prod
+    environment:
+      - NODE_ENV=production
