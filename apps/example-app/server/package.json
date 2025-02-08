@@ -1,13 +1,13 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "start": "ts-node src/index.js",
-    "start:dev": "NODE_ENV=development node src/index.js",
-    "start:staging": "NODE_ENV=staging node src/index.js",
-    "start:prod": "NODE_ENV=production node src/index.js",
+    "start": "ts-node src/index.ts",
+    "start:dev": "NODE_ENV=development ts-node src/index.ts",
+    "start:staging": "NODE_ENV=staging ts-node src/index.ts",
+    "start:prod": "NODE_ENV=production ts-node src/index.ts",
     "build": "tsc",
     "dev": "ts-node-dev src/index/js"
   },

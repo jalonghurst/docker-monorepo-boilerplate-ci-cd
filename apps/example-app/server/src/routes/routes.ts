@@ -1,11 +1,11 @@
 import { Router } from 'express';
 
-const router = Router();
+const routes = Router();
 
 // Define your routes here
-router.get('/', (req, res) => {
+routes.get('/', (req, res) => {
     res.send('Welcome to the server!');
 });
 
 // Export the router
-export default router;
+export default routes;
