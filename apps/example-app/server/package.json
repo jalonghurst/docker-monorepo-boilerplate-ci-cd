@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "start:dev": "NODE_ENV=development node src/index.ts",
-    "start:staging": "NODE_ENV=staging node src/index.ts",
-    "start:prod": "NODE_ENV=production node src/index.ts",
+    "start:dev": "NODE_ENV=development ts-node src/index.ts",
+    "start:staging": "NODE_ENV=staging ts-node src/index.ts",
+    "start:prod": "NODE_ENV=production ts-node src/index.ts",
     "build": "tsc",
     "dev": "ts-node-dev src/index.ts"
   },
